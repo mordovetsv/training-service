@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Training service</title>
+    <link rel="stylesheet" href="./general.css">
+</head>
+<body>
+<header>
+    <h1>Welcome</h1>
+</header>
+<main>
+    <h2>
+        Выберите упражнения для тренировочной программы
+    </h2>
+
+    <form class="training-creation-form" method="post" th:action="@{/trainings}" th:object="${training}">
+        <label>Название тренировки</label>
+        <input type="text" name="training-name" required/><br>
+        <input type="checkbox" name="press-ups">Отжимания</input><br>
+        <input type="checkbox" name="pull-ups">Подтягивания</input><br>
+        <input type="checkbox" name="jumps">Прыжки</input><br>
+        <input class="training-creation-form__button" type="submit" value="Отправить">
+    </form>
+
+
+</main>
+
+</body>
+</html>
