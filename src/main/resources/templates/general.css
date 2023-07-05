@@ -29,8 +29,7 @@ body {
 }
 
 .training-creation-form__button:hover {
-    color: var(--main-color);
-    background-color: var(--secondary-color);
+    opacity:0.75;
 }
 .training-creation-form__button:active {
     opacity: 0.5;
