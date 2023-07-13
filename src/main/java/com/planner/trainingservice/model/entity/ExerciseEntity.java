@@ -4,25 +4,31 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.Instant;
-
 @Entity
-@Table(name="USERS")
+@Table(name="TRAINING_SCHEMA_EXERCISE")
 @Getter
 @Setter
-public class TrainingSessionEntity {
+public class ExerciseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
 
+    @Column(name = "EXERCISE_NAME")
+    private  String exerciseName;
+
+    @Column(name = "APPROACH_COUNT")
+    private Integer approachCount;
+
+    @Column(name = "COUNT_FOR_APPROACH")
+    private Integer countForApproach;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TRAINING_SCHEMA_ID")
     private TrainingSchemaEntity trainingSchema;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "TRAINING_DATE")
-    private Instant trainingDate;
+    @Column(name = "ordinal")
+    private Integer ordinal;
 
 }
