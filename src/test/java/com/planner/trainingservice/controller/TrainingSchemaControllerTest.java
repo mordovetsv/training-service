@@ -72,17 +72,28 @@ class TrainingSchemaControllerTest {
 
     }
 
-//    @DisplayName("findById() - normal return")
-//    @Test
-//    void findById_notFoundReturn() throws Exception {
-//        Optional<TrainingSchemaEntity> trainingSchema = Optional.empty();
-//        when(this.trainingSchemaService.findById(1L)).thenReturn(trainingSchema);
-//        this.mockMvc.perform(get("/trainingSchemas/1")
-//                        .accept(MediaType.APPLICATION_JSON))
-//                .andExpectAll(
-//                        status().isNotFound());
-//
-//    }
+    @DisplayName("findById() - not found return") @Test
+    void findById_notFoundReturn() throws Exception {
+        Optional<TrainingSchemaEntity> trainingSchema = Optional.empty();
+        when(this.trainingSchemaService.findById(1L)).thenReturn(trainingSchema);
+        this.mockMvc.perform(get("/trainingSchemas/1")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpectAll(
+                        status().isNotFound());
+
+    }
+
+    @DisplayName("findById() - normal return") @Test
+    void findById_normalReturn() throws Exception {
+        Optional<TrainingSchemaEntity> trainingSchema = Optional.of(new TrainingSchemaEntity());
+        when(this.trainingSchemaService.findById(1L)).thenReturn(trainingSchema);
+        this.mockMvc.perform(get("/trainingSchemas/1")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpectAll(
+                        status().isOk(),
+                        content().bytes(this.objectMapper.writeValueAsBytes(trainingSchema.get())));
+
+    }
 
 }
 

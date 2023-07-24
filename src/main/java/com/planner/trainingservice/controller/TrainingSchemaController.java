@@ -57,5 +57,4 @@ public class TrainingSchemaController {
             return ResponseEntity.ok(trainingSchema.get());
         }
     }
-
 }

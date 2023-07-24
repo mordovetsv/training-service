@@ -73,4 +73,5 @@ class TrainingSchemaServiceImplTest {
                 trainingSchema);
     }
 
+
 }
