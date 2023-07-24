@@ -1,15 +1,10 @@
 :root{
-    --main-color: green;
+    --main-color: black;
     --secondary-color: white;
 }
 
-* {
-    margin: 1rem;
-    padding: 0;
-}
-
 html {
-    font-size: 62.5%;
+    font-size: 100%;
 }
 
 body {
@@ -18,15 +13,31 @@ body {
     color: var(--main-color);
 }
 
-.training-creation-form__button {
-    padding: 2rem 3rem;
+
+.training-creation-form {
+    display: flex;
+    flex-direction: column;
+      justify-content: start;
+      align-items: flex-start;
+      flex-shrink: 0;
+
+    }
+.training-creation-form div {
+
+    margin-bottom: 0.5rem;
+
+    }
+.training-creation-form button {
+    padding: 0.2rem 1rem;
     color: var(--secondary-color);
     background-color: var(--main-color);
-    font-size: 1.5rem;
-    border-radius: 1rem;
+    font-size: 1rem;
+    border-radius: 0.2rem;
     border: 0.2rem solid  var(--main-color);
     cursor: pointer;
+    margin-bottom: 0.5rem;
 }
+
 
 .training-creation-form__button:hover {
     opacity:0.75;

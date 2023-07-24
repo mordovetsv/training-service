@@ -9,9 +9,15 @@ import java.util.Set;
 
 @Entity
 @Table(name="TRAINING_SCHEMA")
-
+@NamedEntityGraph(
+        name = "trainingSchema.withExercisesAndUser",
+        attributeNodes =  {
+                @NamedAttributeNode("exercises"),
+                @NamedAttributeNode("user")
+        })
 @Setter
 public class TrainingSchemaEntity {
+    public static final String ENTITY_GRAPH_WITH_EXERCISES_AND_USER =  "trainingSchema.withExercisesAndUser";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
