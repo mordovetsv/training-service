@@ -1,0 +1,47 @@
+:root{
+    --main-color: black;
+    --secondary-color: white;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: Arial;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+}
+
+
+.training-creation-form {
+    display: flex;
+    flex-direction: column;
+      justify-content: start;
+      align-items: flex-start;
+      flex-shrink: 0;
+
+    }
+.training-creation-form div {
+
+    margin-bottom: 0.5rem;
+
+    }
+.training-creation-form button {
+    padding: 0.2rem 1rem;
+    color: var(--secondary-color);
+    background-color: var(--main-color);
+    font-size: 1rem;
+    border-radius: 0.2rem;
+    border: 0.2rem solid  var(--main-color);
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+}
+
+
+.training-creation-form__button:hover {
+    opacity:0.75;
+}
+.training-creation-form__button:active {
+    opacity: 0.5;
+}

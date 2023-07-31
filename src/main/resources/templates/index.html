@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Training service</title>
+    <link rel="stylesheet" href="templates/general.css">
+    <script type="module" src="templates/addExerciseButton.js"></script>
+</head>
+<body>
+<header>
+    <h1>Welcome</h1>
+</header>
+<main>
+    <h2>
+        Выберите упражнения для тренировочной программы
+    </h2>
+
+    <form class="training-creation-form">
+        <div class="training-creation-form__training-name">
+        <label>Название тренировки</label>
+        <input type="text" name="training-name" required/>
+        </div>
+        <div class="training-creation-form__exercise">
+            <div class="training-creation-form__exercise-name">
+            <label>Название упражнения</label>
+            <input type="text" name="exercise-name" required/>
+        </div>
+            <div class="training-creation-form__approach-count">
+                <label>количество подходов</label>
+                <input type="number" name="approach-count" required/>
+            </div>
+            <div class="training-creation-form__count-of-approach">
+                <label>количество повторений</label>
+                <input type="number" name="count-of-approach" required/>
+            </div>
+            <input type="number" name="ordinal" hidden value="1" required/>
+        </div>
+
+
+            <button class="training-creation-form__add-exercise-form-button">Добавить упражнение</button>
+            <button class="training-creation-form__submit-button">Создать программу тренировок</button>
+    </form>
+
+
+</main>
+
+</body>
+</html>
